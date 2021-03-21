@@ -49,15 +49,15 @@ app.get("/register", (req, res) => {
 });
 
 // Main Layout
-app.get("/playlists", (req, res) => {
+app.get("/:username/playlists", (req, res) => {
   res.render("playlists");
 });
 
-app.get("/artists", (req, res) => {
+app.get("/:username/artists", (req, res) => {
   res.render("artists");
 });
 
-app.get("/albums", (req, res) => {
+app.get("/:username/albums", (req, res) => {
   res.render("albums");
 });
 
