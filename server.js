@@ -1,10 +1,15 @@
 const express = require("express");
+const favicon = require("serve-favicon");
 const path = require("path");
 const app = express();
 const port = 8000;
 
 // Static public folder
 app.use(express.static(path.join(__dirname, "/public")));
+
+// Static favicon
+app.use(favicon(path.join(__dirname, "/public", "favicon.ico")));
+
 // Static font-awesome lib
 app.use(
   express.static(
