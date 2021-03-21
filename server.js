@@ -32,32 +32,28 @@ app.use(
 // ================
 
 // Handlebars Setup
-app.engine(".hbs", hbs());
-app.set("view engine", ".hbs");
+app.engine("hbs", hbs({ extname: "hbs" }));
+app.set("view engine", "hbs");
 
 // Handlebars paths
 app.get("/", (req, res) => {
-  res.render("index", { layout: false });
-});
-
-app.get("/hello/:name", (req, res) => {
-  res.render("hello", { layout: false, name: req.params.name });
+  res.render("index", { layout: "home" });
 });
 
 app.get("/playlists", (req, res) => {
-  res.render("playlists", { layout: false });
+  res.render("playlists");
 });
 
 app.get("/artists", (req, res) => {
-  res.render("artists", { layout: false });
+  res.render("artists");
 });
 
 app.get("/albums", (req, res) => {
-  res.render("albums", { layout: false });
+  res.render("albums");
 });
 
 app.use((req, res) => {
-  res.status(404).render("404", { layout: false });
+  res.status(404).render("404");
 });
 
 // ================
