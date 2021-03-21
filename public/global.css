@@ -1,16 +1,4 @@
 /* ================= */
-/* Variables */
-/* ================= */
-
-:root {
-  --dark: #000;
-  --light: #fff;
-  --grey: #999;
-  --grey-light-1: #f4f4f4;
-  --grey-dark-1: #333;
-}
-
-/* ================= */
 /* Global */
 /* ================= */
 
@@ -31,4 +19,9 @@ body {
   height: 100%;
   overflow: auto;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
