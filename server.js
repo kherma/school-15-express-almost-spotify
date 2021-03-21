@@ -27,14 +27,6 @@ app.use(
   )
 );
 
-// Path middleware
-app.use((req, res, next) => {
-  res.show = (name) => {
-    res.sendFile(path.join(__dirname, `/views/${name}.html`));
-  };
-  next();
-});
-
 // ================
 // Handlebars
 // ================
@@ -44,32 +36,28 @@ app.engine(".hbs", hbs());
 app.set("view engine", ".hbs");
 
 // Handlebars paths
+app.get("/", (req, res) => {
+  res.render("index", { layout: false });
+});
+
 app.get("/hello/:name", (req, res) => {
   res.render("hello", { layout: false, name: req.params.name });
 });
 
-// ================
-// Static paths
-// ================
-
-app.get("/", (req, res) => {
-  res.show("index");
-});
-
 app.get("/playlists", (req, res) => {
-  res.show("playlists");
+  res.render("playlists", { layout: false });
 });
 
 app.get("/artists", (req, res) => {
-  res.show("artists");
+  res.render("artists", { layout: false });
 });
 
 app.get("/albums", (req, res) => {
-  res.show("ablums");
+  res.render("albums", { layout: false });
 });
 
 app.use((req, res) => {
-  res.status(404).show("404");
+  res.status(404).render("404", { layout: false });
 });
 
 // ================
