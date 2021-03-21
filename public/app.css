@@ -1,0 +1,14 @@
+/* ================= */
+/* Variables */
+/* ================= */
+
+:root {
+  --main-font: "Chango", cursive;
+  --dark: #000;
+  --light: #fff;
+  --grey: #999;
+  --grey-light-1: #f4f4f4;
+  --grey-light-2: #dcdde1;
+  --grey-dark-1: #111;
+  --grey-dark-2: #718093;
+}

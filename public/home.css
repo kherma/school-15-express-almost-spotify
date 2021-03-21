@@ -3,11 +3,14 @@
 /* ================= */
 
 :root {
+  --main-font: "Chango", cursive;
   --dark: #000;
   --light: #fff;
   --grey: #999;
   --grey-light-1: #f4f4f4;
+  --grey-light-2: #dcdde1;
   --grey-dark-1: #111;
+  --grey-dark-2: #718093;
 }
 
 /* ================= */
@@ -51,20 +54,95 @@ h2 {
 /* ================= */
 /* Main */
 /* ================= */
+
 .home__main {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 200px);
+  margin-top: 100px;
   background-color: var(--grey-dark-1);
   color: var(--light);
-  font-size: 70px;
   text-align: center;
 }
 
 .home__main h1 {
+  font-size: 130px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: load-content 2s;
+}
+
+.title__darker {
+  color: var(--grey-dark-2);
+  font-family: var(--main-font);
+}
+
+.title__lighter {
+  color: var(--grey-light-2);
+  font-family: "Chango", cursive;
+}
+
+/* ================= */
+/* Forms */
+/* ================= */
+
+.container__form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  animation: load-content 2s;
+}
+
+.main__form {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.input__group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 40px 0;
+}
+
+.input__checkbox {
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 15px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+input:focus {
+  outline-color: var(--grey);
+}
+
+.btn {
+  width: 100%;
+  background-color: var(--grey-light-1);
+  color: var(--dark);
+  transition: all 0.2s;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.3);
 }
 
 /* ================= */
@@ -94,4 +172,15 @@ h2 {
 
 .home__footer--sub {
   color: var(--light);
+}
+
+@keyframes load-content {
+  from {
+    opacity: 0;
+    transform: translate(-100%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }

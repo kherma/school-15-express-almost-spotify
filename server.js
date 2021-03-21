@@ -35,11 +35,20 @@ app.use(
 app.engine("hbs", hbs({ extname: "hbs" }));
 app.set("view engine", "hbs");
 
-// Handlebars paths
+// Home Layout
 app.get("/", (req, res) => {
   res.render("index", { layout: "home" });
 });
 
+app.get("/login", (req, res) => {
+  res.render("login", { layout: "home" });
+});
+
+app.get("/register", (req, res) => {
+  res.render("register", { layout: "home" });
+});
+
+// Main Layout
 app.get("/playlists", (req, res) => {
   res.render("playlists");
 });
