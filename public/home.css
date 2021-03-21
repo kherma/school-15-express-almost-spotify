@@ -28,15 +28,6 @@
   align-items: center;
 }
 
-.home__logo {
-  color: var(--light);
-}
-
-h2 {
-  float: right;
-  margin-left: 20px;
-}
-
 .home__nav a {
   color: var(--light);
   text-transform: uppercase;
@@ -71,16 +62,6 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   animation: load-content 2s;
-}
-
-.title__darker {
-  color: var(--grey-dark-2);
-  font-family: var(--main-font);
-}
-
-.title__lighter {
-  color: var(--grey-light-2);
-  font-family: "Chango", cursive;
 }
 
 /* ================= */

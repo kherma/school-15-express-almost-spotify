@@ -28,7 +28,9 @@
   </head>
   </head>
   <body>
+    <!-- App Container -->
     <div class="app__container">
+      <!-- Header -->
       <header class="app__header">
         <nav class='app__nav'>
           <a class='active' href="/john-doe/playlists">Playlists</a>
@@ -40,24 +42,30 @@
           <a href="/">Logout</a>
         </div>
       </header>
+      <!-- Main -->
       <main class="app__main">{{{body}}}</main>
+      <!-- Aside -->
       <aside class="app__aside">
-       <span class="home__logo">
-         <i class="fas fa-music fa-2x"></i>
-         <h2>
-           <span class='title__darker'>Walk</span>
-          <span class='title__lighter'>Man</span>
-        </h2>
-      </span>
+        <!-- Aside Header -->
+        <div class="home__logo">
+          <i class="fas fa-music fa-2x"></i>
+          <h2>
+            <span class='title__darker'>Walk</span>
+            <span class='title__lighter'>Man</span>
+          </h2>
+        </div>
+        <!-- Aside Playlists -->
+        <div class="aisde__playlists">
+          <button class='btn__create'>
+            <i class="fas fa-plus-square"></i> 
+            <span class="btn__text">Create Playlist</span>
+          </button>
+          <h3 class='playlists__title'>Playlists</h3>
+        </div>
+        <div class="asice__playlist--list"></div>
       </aside>
+      <!-- Music Player -->
       <div class="player__box">asdasd</div>
     </div>
   </body>
 </html>
-
-
-{{!-- <header>
-      
-    </header>
-
-     --}}

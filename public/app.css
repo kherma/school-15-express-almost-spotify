@@ -91,17 +91,66 @@
 /* Aside */
 /* ================= */
 .app__aside {
-  background-color: var(--grey-dark-3);
+  background-color: var(--dark);
   grid-column: 1/2;
   grid-row: 1/5;
   min-width: 250px;
+}
+
+.home__logo {
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aisde__playlists {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: var(--grey-light-1);
+}
+
+.playlists__title {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 15px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  width: 100%;
+  border-bottom: 2px solid var(--grey);
+}
+
+.btn__create {
+  border: none;
+  background-color: var(--grey-dark-3);
+  color: var(--light);
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.btn__create:focus {
+  outline-color: var(--light);
+}
+
+.btn__create:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn__text {
+  margin-left: 10px;
 }
 
 /* ================= */
 /* Music Player */
 /* ================= */
 .player__box {
-  background-color: var(--dark);
+  background-color: var(--grey-dark-3);
   grid-column: 1/4;
   grid-row: 4/5;
   min-height: 120px;

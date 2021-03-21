@@ -25,3 +25,25 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* ================= */
+/* Logo */
+/* ================= */
+.home__logo {
+  color: var(--light);
+}
+
+.title__darker {
+  color: var(--grey-dark-2);
+  font-family: var(--main-font);
+}
+
+.title__lighter {
+  color: var(--grey-light-2);
+  font-family: var(--main-font);
+}
+
+.home__logo h2 {
+  float: right;
+  margin-left: 20px;
+}
