@@ -4,6 +4,11 @@
 
 const express = require("express");
 const favicon = require("serve-favicon");
+const multer = require("multer");
+const uploading = multer({
+  dest: __dirname + "/uploads/",
+  limits: { fileSize: 1000000, files: 1 },
+});
 const hbs = require("express-handlebars");
 const path = require("path");
 
@@ -17,6 +22,9 @@ const app = express();
 // Static public folder
 app.use(express.static(path.join(__dirname, "/public")));
 
+// Static uploads folder
+app.use(express.static(path.join(__dirname, "/uploads")));
+
 // Static favicon
 app.use(favicon(path.join(__dirname, "/public", "favicon.ico")));
 
@@ -29,6 +37,7 @@ app.use(
 
 // Post request
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // ================
 // Handlebars
@@ -55,14 +64,13 @@ app.get("/contact", (req, res) => {
   res.render("contact", { layout: "home" });
 });
 
-app.post("/contact/send-message", (req, res) => {
-  const { author, sender, title, message, screen } = req.body;
-
-  if (author && sender && title && message && screen) {
+app.post("/contact/send-message", uploading.single("screen"), (req, res) => {
+  const { author, sender, title, message } = req.body;
+  if (author && sender && title && message && req.file) {
     res.render("contact", {
       layout: "home",
       isSent: true,
-      fileName: screen,
+      fileName: req.file.filename,
     });
   } else {
     res.render("contact", { layout: "home", isError: true });

@@ -1,7 +1,8 @@
 <div class="container__form">
   {{#if isSent}}
   <div class="message isSent">
-    Message has been sent! File {{ fileName }} has been saved!
+    <p>Message has been sent!</p>
+    <img class='message__img' src='/{{fileName}}' alt='{{fileName}}'>
   </div>
   {{/if}}
   {{#if isError}}
@@ -11,6 +12,7 @@
     action="/contact/send-message"
     method="POST"
     class="main__form contact__form"
+    enctype="multipart/form-data"
   >
     <div class="input__group">
       <label for="author">Name</label>
