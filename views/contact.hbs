@@ -1,11 +1,17 @@
 <div class="container__form">
   {{#if isSent}}
-  <div class="isSent">Message has been sent!</div>
+  <div class="message isSent">
+    Message has been sent! File {{ fileName }} has been saved!
+  </div>
   {{/if}}
   {{#if isError}}
-  <div class="isError">You can't leave empty fields!</div>
+  <div class="message isError">You can't leave empty fields!</div>
   {{/if}}
-  <form action="/contact/send-message" method="POST" class="main__form">
+  <form
+    action="/contact/send-message"
+    method="POST"
+    class="main__form contact__form"
+  >
     <div class="input__group">
       <label for="author">Name</label>
       <input type="text" name="author" id="author" />
@@ -19,10 +25,19 @@
       <input type="text" name="title" id="title" />
     </div>
     <div class="input__group">
+      <label for="screen">Screen</label>
+      <input
+        type="file"
+        accept=".jpeg,.jpg,.png,.gif"
+        name="screen"
+        id="screen"
+      />
+    </div>
+    <div class="input__group input__textarea">
       <label for="message"> Message</label>
       <textarea name="message" id="message"></textarea>
     </div>
-    <div class="input__group">
+    <div class="input__group input__btn">
       <button class="btn__submit" type="submit">Send message</button>
     </div>
   </form>

@@ -56,10 +56,14 @@ app.get("/contact", (req, res) => {
 });
 
 app.post("/contact/send-message", (req, res) => {
-  const { author, sender, title, message } = req.body;
+  const { author, sender, title, message, screen } = req.body;
 
-  if (author && sender && title && message) {
-    res.render("contact", { layout: "home", isSent: true });
+  if (author && sender && title && message && screen) {
+    res.render("contact", {
+      layout: "home",
+      isSent: true,
+      fileName: screen,
+    });
   } else {
     res.render("contact", { layout: "home", isError: true });
   }
