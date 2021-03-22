@@ -100,7 +100,9 @@
 }
 
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="text"],
+textarea {
   width: 100%;
   padding: 10px;
 }
@@ -109,7 +111,9 @@ input[type="checkbox"] {
   margin-right: 10px;
 }
 
-input:focus {
+input:focus,
+textarea:focus,
+button {
   outline-color: var(--grey);
 }
 
@@ -124,6 +128,14 @@ input:focus {
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 3px 5px rgba(255, 255, 255, 0.3);
+}
+
+.btn__submit {
+  text-transform: uppercase;
+  font-size: 25px;
+  border: none;
+  width: 100%;
+  padding: 10px 20px;
 }
 
 /* ================= */

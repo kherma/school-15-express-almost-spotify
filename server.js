@@ -27,6 +27,9 @@ app.use(
   )
 );
 
+// Post request
+app.use(express.urlencoded({ extended: false }));
+
 // ================
 // Handlebars
 // ================
@@ -46,6 +49,14 @@ app.get("/login", (req, res) => {
 
 app.get("/register", (req, res) => {
   res.render("register", { layout: "home" });
+});
+
+app.get("/contact", (req, res) => {
+  res.render("contact", { layout: "home" });
+});
+
+app.post("/contact/send-message", (req, res) => {
+  res.json(req.body);
 });
 
 // Main Layout
